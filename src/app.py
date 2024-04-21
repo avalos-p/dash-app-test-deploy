@@ -5,7 +5,6 @@ from dash_bootstrap_components.themes import BOOTSTRAP
 
 def main()-> None:
     app = Dash(__name__, use_pages=True, external_stylesheets=[BOOTSTRAP])
-    server = app.server
     app.config.suppress_callback_exceptions = True
     app.layout = html.Div([
         html.H1('Dash Competition: Credit Card transactions fraud detection with Machine Learning'),
@@ -24,4 +23,5 @@ def main()-> None:
 
 if __name__ == '__main__':
     app = main()
+    server = app.server
     app.run_server(debug=True)
