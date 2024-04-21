@@ -21,4 +21,7 @@ def main()-> None:
     return app
 
 
-server = app.server
+if __name__ == '__main__':
+    app = main()
+    server = app.server
+    app.run_server(debug=True)
