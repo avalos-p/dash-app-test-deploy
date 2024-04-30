@@ -11,27 +11,35 @@ h1 {
     margin-left: 17rem;
     margin-right: 0.5rem;
     font-family: 'Roboto';
-    color: #ffffff;
+    color: whitesmoke;
+}
+.date-project{
+    display: inline-block;
+    font-size: 1rem;
+    position: absolute;
+    color: #5d6dff;
+    right:5rem;    
 }
 h2{
     margin-left: 10px;
     font-family: 'Roboto';
     margin-bottom: 10px;
-    color: #ffffff;
+    color: whitesmoke;
 }
 h5{
     font-family: 'Roboto';
     padding-left: 15px;
     font-size: 20px;
-    color: #ffffff,
+    color: whitesmoke,
 }
 h4{
-    color: white;
+    color: whitesmoke;
     margin-top: 3%;
 }
 P{
    color: azure;
-   margin-right: 2%; 
+   margin-right: 2%;
+   margin-left: 1%; 
 }
 img{
     margin-top: 3%;
@@ -49,35 +57,40 @@ img{
 .buttons-div{
     display: flex;
     white-space: nowrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     margin-right: 0.5rem;
+    margin-left: 22%;
 }
 .button-links {
     background-color: #4653c8;
     color: whitesmoke;
     border: 1px solid rgb(6, 0, 59);
-    padding: 0.2rem;
+    padding: 0.3rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
     border-radius: 10px;
     font-family: "Roboto";
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-top: 1.5rem;
     text-align:center; 
-    margin-inline: 0.5rem;
+    margin-inline: 20%;
 }
 .div-home {
     display: flex;
     bottom: 0;
-    top: 15rem;
+    /* top: 15rem; */
 }
 .sidebar-style {
     position: fixed;
     width: auto;
-    top: 18rem;
+    top: 15rem;
+    /* top: 10rem; */
     padding-inline-end: 1rem;
     background-color: #1f1f28;
     bottom: 0;
+    font-size: 1.09rem;
 }
 .sidebar-hr {
     position: relative;
@@ -99,7 +112,7 @@ img{
     margin-inline-start: 3rem;
     margin-top: 5rem;
     margin-bottom: 0rem;
-    color: white;
+    color: whitesmoke;
     background-color: #1f1f28;
 }
 .models-dropdown{
@@ -141,13 +154,30 @@ img{
 .info-container p{
     margin-left: 30px;
     margin-top:5px;
-    color: white;
+    color: whitesmoke;
+}
+.author{
+    /* display: flex; */
+    /* position: fixed; */
+    /* margin-top: 5%; */
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #5d6dff;
+    left: 5rem;
+    margin-right: auto;
 }
 footer{
-    margin-inline: 35%;
+    display: flex;
+    justify-content:left; 
+    margin-top: 5rem;
+    /* padding-top: 20px; */
+    padding-bottom: 15px;
+    text-align: center;
+    margin-right: 4rem;
 }
 .footer-link{
-    padding-right: 5%;
+    padding-right: 2%;
 }
-
-
+.footer-icon{
+    height: 3rem;
+}

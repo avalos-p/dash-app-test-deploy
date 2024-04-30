@@ -69,7 +69,8 @@ content = html.Div([
                             class until the proportion between the classes is adjusted. 
                            Both strategies have their advantages and disadvantages. In this case, I chose undersampling to
                             prevent overfitting and reduce computational burden.''',
-                           className='Image-text')],className='Image-Conteiner')
+                           className='Image-text')],className='Image-Conteiner'),
+                html.Img(src='/assets/balanced_imbalanced.png'),
             ]),
             html.Div([
                 html.H4('Understanding the Data: type, features, importance and irrelevance',id='dataset'),
@@ -78,6 +79,7 @@ content = html.Div([
                         City, State, ZIP, Latitude, Longitude, City Population, Job, Date of Birth, 
                        Transaction Number, Unix Time, Merchant Latitude, Merchant Longitude, Is Fraud.
                        '''),
+                html.Img(src='/assets/columns.png'),
                 html.P(''' 
                        For this analysis, I've chosen to exclude location-related columns. I need a model that isn't 
                        solely based on specific locations. Additionally, overly specific and personal information isn't
@@ -93,19 +95,25 @@ content = html.Div([
             html.Div([
                 html.H4('Machine Learning Models: Tests, trains and evaluations',id='ml-models'),
                 html.P(''' 
-                        Initially, I attempted to apply the models with the imbalanced data and adjusted the weights
+                        Firstly, I merged the files from the test dataset and the original one,
+                       I attempted to apply the models with the imbalanced data and adjusted the weights
                         within the same models. However, this didn't yield optimal solutions, so I modified the process 
                        and performed undersampling.
-                       
-                       Firstly, I merged the files from the test dataset and the original one. Then, I counted
-                        all the fraudulent data and randomly selected the same amount of non-fraudulent data. 
-                       Once I had balanced datasets, I proceeded with the models.
+                    
+                       Initially, I counted all the fraudulent data and randomly selected the same amount of
+                       non-fraudulent data. Once I had balanced datasets, I proceeded with the models.
                         '''),
                 html.P('''
                        I chose the most common models currently in use, and upon running them,
                         I noticed a significant difference between the latest designs, particularly 
                        the boost models compared to the others.
                 '''),
+                html.P('''
+                        Among the models tested, the XGBClassifier emerged as the most effective in identifying 
+                       fraudulent transactions. Its robust performance surpassed that of other classifiers, demonstrating 
+                       superior predictive power and reliability in detecting fraudulent activities within credit card 
+                       transactions.
+                       '''),
             ]),
             html.Div([
                 html.H4('Hyperparemeters: relevancy in this case',id='hyperparemeters'),
@@ -128,12 +136,13 @@ content = html.Div([
                 '''),
                 
             ]),
-             html.Footer(  # Agregamos un pie de página
+            html.Footer(  # Agregamos un pie de página
                 className="footer",
                 children=[
-                    html.A("LinkedIn Profile", href="https://www.linkedin.com/in/avalos-p/",className="footer-link"),
-                    "    ",
-                    html.A("GitHub Project", href="https://github.com/avalos-p/dash-competition",className="footer-link"),
+                    html.H2('Designed by Pablo Avalos for educational purposes.', className='author'),
+                    html.A(html.Img(src="/assets/linkedin_icon.png", className="footer-icon"), href="https://www.linkedin.com/in/avalos-p/",className="footer-link"),
+                    
+                    html.A(html.Img(src="/assets/github_icon.png", className="footer-icon"), href="https://github.com/avalos-p/dash-competition",className="footer-link"),
                     
                     ]
                     ),
@@ -141,5 +150,6 @@ content = html.Div([
 
 
 layout = html.Div([dcc.Location(id="url"), sidebar,html.Hr(className="sidebar-hr"), content ],className="div-home")
+
 
 
