@@ -8,6 +8,7 @@ app = Dash(__name__, use_pages=True, external_stylesheets=[BOOTSTRAP])
 app.config.suppress_callback_exceptions = True
 app.layout = html.Div([
     html.H1('Dash Competition: Credit Card transactions fraud detection with Machine Learning'),
+    html.H2('April - 2024', className='date-project'),
     html.Div([
             dcc.Link(
                 html.Button(f"{page['name']}", className='button-links'), 

@@ -26,15 +26,14 @@ sidebar = html.Div(
 content = html.Div([
             html.Div([
                 html.H4('Introduction',id='introduction'),
-                html.P('''This challenge set up by Plotly-Dash team mainly focused on using a credit card fraud 
+                html.P('''This challenge set up by Plotly-Dash team primarily focused on using a credit card fraud 
                        database and applying Machine Learning methods to predict possible future fraud. '''),
-                html.P('''The project was completely open, so I decided to compare different Machine Learning 
-                       methods to see how effective they were at predicting this fraud, this tasks were executed in a 
-                       notebook, available in the repository. For visualization, I used Dash, 
-                       a framework that enables the creation of interactive dashboards, facilitating the comprehension
-                        of the outcomes'''),
+                html.P('''The project was entirely open, so I decided to compare different Machine Learning methods
+                        to assess their effectiveness in predicting fraud. These tasks were executed in a notebook 
+                       available in the repository. For visualization, I used Dash, a framework that enables the creation
+                        of interactive dashboards, facilitating comprehension of the outcomes.'''),
                 html.P('''The dataset, provided by Kartik Shenoy on Kaggle is a simulated credit card transaction dataset
-                       containing legitimate and fraud transactions from the duration 1st Jan 2019 - 31st Dec 2020.
+                       containing legitimate and fraud transactions from January 1st, 2019, to December 31st, 2020.
                         It covers credit cards of 1000 customers doing transactions with a pool of 800 merchants.
                     ''')
             ]),
@@ -44,23 +43,22 @@ content = html.Div([
                          where one target class significantly outweighs the others in terms of observations.
                          This skew in class distribution, such as ratios of 1:100 or more between classes, 
                        can pose difficulties for classification models.'''), 
-                html.P('''For example, a dataset with a 1:100 class imbalance; simply predicting the majority 
+                html.P('''For example, a dataset with a 1:100 class imbalance, simply predicting the majority 
                         class every time could yield a 99% accuracy rate, despite the model not truly learning 
                         anything about the minority class.'''),
                 html.Div([
                     html.Img(src='/assets/balanced_marcin_rutecki.png',style={"width": "50%","height":" 50%"}),
                     html.P('''This extreme class imbalance means that a naive model that always predicts 
                         genuine transactions would achieve an accuracy of 99.8%, despite being practically
-                        useless for fraud detection.
-                           This is an example of a balanced dataset 
+                        useless for fraud detection. This is an example of a balanced dataset 
                            versus an imbalanced one (actual case).''',className='Image-text')],className='Image-Conteiner'),
 
                 html.Div([
                     html.Img(src='/assets/myplot.png',style={"width": "50%","height":" 50%"}),
                     html.P('''This is the current scenario, where
-                            a significant imbalance between normal and fraudulent clases can be observed,
-                           in this dataset not fraudulent data is 190 times bigger than fraudulent data.
-                            There are several strategies that can be used, One of them is oversampling, that
+                            a significant imbalance between normal and fraudulent clases can be observed. 
+                           In this dataset, non-fraudulent data is 190 times larger than fraudulent data.
+                           There are several strategies that can be used. One of them is oversampling, that
                            involves increasing the size of the minority class by generating new samples, 
                            using for example SMOTE (Synthetic Minority Over-sampling Technique) which creates new
                            synthetic samples based on existing ones.
@@ -95,13 +93,14 @@ content = html.Div([
             html.Div([
                 html.H4('Machine Learning Models: Tests, trains and evaluations',id='ml-models'),
                 html.P(''' 
-                        Firstly, I merged the files from the test dataset and the original one,
-                       I attempted to apply the models with the imbalanced data and adjusted the weights
-                        within the same models. However, this didn't yield optimal solutions, so I modified the process 
-                       and performed undersampling.
+                        Firstly, I merged the files from the test dataset and the original one.
+                       I attempted to apply the models with the imbalanced data and adjusted the 
+                       weights within the same models. However, this didn't yield optimal solutions,
+                        so I modified the process and performed undersampling.
                     
-                       Initially, I counted all the fraudulent data and randomly selected the same amount of
-                       non-fraudulent data. Once I had balanced datasets, I proceeded with the models.
+                        Initially, I counted all the fraudulent data and randomly selected the same amount 
+                       of non-fraudulent data.
+                        Once I had balanced datasets, I proceeded with the models.
                         '''),
                 html.P('''
                        I chose the most common models currently in use, and upon running them,
@@ -126,13 +125,13 @@ content = html.Div([
                 
             ]),
             html.Div([
-                html.H4('Results: Interpretation and interesting facts',id='results'),
+                html.H4('Results',id='results'),
                 html.P('''
                         The competition was undoubtedly challenging, I utilized
                         the provided dataset to devise a highly precise method for predicting fraud.
-                        Additionally, various comparisons were conducted, and the results are available 
-                       on the Models page. Furthermore, clear visualization was achieved through Plotly plots
-                        integrated into Dash, making the most of the diverse tools offered by the platform.             
+                        Additionally, various comparisons methods were conducted, and the results are available 
+                       on the Models page, finding the XGB Classifier as the best method.
+                       Furthermore, clear visualization was achieved through Plotly plots integrated into Dash.             
                 '''),
                 
             ]),
@@ -150,6 +149,3 @@ content = html.Div([
 
 
 layout = html.Div([dcc.Location(id="url"), sidebar,html.Hr(className="sidebar-hr"), content ],className="div-home")
-
-
-
