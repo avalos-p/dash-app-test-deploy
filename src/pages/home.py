@@ -26,26 +26,26 @@ sidebar = html.Div(
 content = html.Div([
             html.Div([
                 html.H4('Introduction',id='introduction'),
-                html.P('''This challenge set up by Plotly-Dash team primarily focused on using a credit card fraud 
-                       database and applying Machine Learning methods to predict possible future fraud. '''),
-                html.P('''The project was entirely open, so I decided to compare different Machine Learning methods
-                        to assess their effectiveness in predicting fraud. These tasks were executed in a notebook 
-                       available in the repository. For visualization, I used Dash, a framework that enables the creation
-                        of interactive dashboards, facilitating comprehension of the outcomes.'''),
-                html.P('''The dataset, provided by Kartik Shenoy on Kaggle is a simulated credit card transaction dataset
-                       containing legitimate and fraud transactions from January 1st, 2019, to December 31st, 2020.
-                        It covers credit cards of 1000 customers doing transactions with a pool of 800 merchants.
+                html.P('''The primary focus of this challenge, set up by the Plotly-Dash team, 
+                       was to utilize a credit card fraud database and apply Machine Learning methods to predict future fraud.  '''),
+                html.P('''The project was entirely open, allowing for a comparison of different Machine Learning methods to assess 
+                       their effectiveness in predicting fraud.
+                         These tasks were executed in a notebook available in the repository.
+                         For visualization, I used Dash, a framework that enables the creation of interactive dashboards,
+                        facilitating comprehension of the outcomes.'''),
+                html.P('''The dataset, provided by Kartik Shenoy on Kaggle, is a simulated credit card transaction dataset
+                        containing legitimate and fraudulent transactions from January 1st, 2019, to December 31st, 2020. 
+                       It covers credit cards of 1000 customers conducting transactions with a pool of 800 merchants.
                     ''')
             ]),
             html.Div([
                 html.H4('Imbalanced Dataset: Oversampling and Undersampling',id='imbalanced'),
-                html.P('''Imbalanced datasets present a common challenge in classification machine learning,
-                         where one target class significantly outweighs the others in terms of observations.
-                         This skew in class distribution, such as ratios of 1:100 or more between classes, 
-                       can pose difficulties for classification models.'''), 
-                html.P('''For example, a dataset with a 1:100 class imbalance, simply predicting the majority 
-                        class every time could yield a 99% accuracy rate, despite the model not truly learning 
-                        anything about the minority class.'''),
+                html.P('''Imbalanced datasets present a common challenge in classification machine learning, 
+                       where one target class significantly outweighs the others in terms of observations. '''), 
+                       
+                html.P('''For example, a dataset with a 1:100 class imbalance could yield a 99% accuracy rate by simply 
+                       predicting the majority class every time, despite the model not truly learning anything about the 
+                       minority class.'''),
                 html.Div([
                     html.Img(src='/assets/balanced_marcin_rutecki.png',style={"width": "50%","height":" 50%"}),
                     html.P('''This extreme class imbalance means that a naive model that always predicts 
@@ -91,7 +91,7 @@ content = html.Div([
                 
             ]),
             html.Div([
-                html.H4('Machine Learning Models: Tests, trains and evaluations',id='ml-models'),
+                html.H4('Machine Learning Models, trains, tests and evaluations',id='ml-models'),
                 html.P(''' 
                         Firstly, I merged the files from the test dataset and the original one.
                        I attempted to apply the models with the imbalanced data and adjusted the 
@@ -117,21 +117,21 @@ content = html.Div([
             html.Div([
                 html.H4('Hyperparemeters: relevancy in this case',id='hyperparemeters'),
                 html.P('''
-                       Once I reviewed the results, I selected the top three to further refine.
-                        With these models, I attempted a random hyperparameter search to see if I 
-                       could enhance accuracy. However, the outcomes weren't particularly significant,
-                        as the most accurate detection models are already optimized.                  
+                       After reviewing the results, the top three models were selected for
+                        further refinement. Random hyperparameter search was attempted to enhance 
+                       accuracy, but the outcomes weren't particularly significant, as the most accurate 
+                       detection models are already optimized.        
                 '''),
                 
             ]),
             html.Div([
-                html.H4('Results',id='results'),
+                html.H4('Results:',id='results'),
                 html.P('''
-                        The competition was undoubtedly challenging, I utilized
-                        the provided dataset to devise a highly precise method for predicting fraud.
-                        Additionally, various comparisons methods were conducted, and the results are available 
-                       on the Models page, finding the XGB Classifier as the best method.
-                       Furthermore, clear visualization was achieved through Plotly plots integrated into Dash.             
+                        The competition was undoubtedly challenging. The provided dataset was utilized
+                        to devise a highly precise method for predicting fraud. Additionally, various comparison 
+                       methods were conducted, and the results are available on the Models page, with the XGB Classifier 
+                       identified as the best method. Furthermore, clear visualization was achieved through Plotly plots 
+                       integrated into Dash.             
                 '''),
                 
             ]),
