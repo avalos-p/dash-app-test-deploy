@@ -1,6 +1,5 @@
 import dash
-from dash import html, dcc, callback
-from dash.dependencies import Input, Output
+from dash import Input, Output, html, dcc, callback
 
 from utils.get_data import models_dict
 from utils.styles import selected_tab, not_selected_tab,dropdown_mystyle
@@ -89,24 +88,22 @@ def update_chart(selected_models: list[str]) -> html.Div:
         graph_div = html.Div([
             html.Div(dcc.Graph(figure=fig_matrix), style={'display': 'inline-block', 'width': '49%'}),
             html.Div(dcc.Graph(figure=fig_pie), style={'display': 'inline-block', 'width': '49%'})
-            ], id='id-chart', className='graph-container1')       
+            ], className='graph-container1')       
                 
         information_div = html.Div([html.H2("About the model"),html.H4(model),
-                                     html.P(model_info)],id='id-information',className='info-container')  
+                                     html.P(model_info)],className='info-container')  
 
         return graph_div, information_div
 
     elif num_selected_models == 0:
-        no_data_div = html.Div([html.H5("No data selected.")], id='id-chart',style ={'color':'white'})
-        no_info_div = html.Div([html.H5("No data selected.")],id='id-information',style ={'color':'white'})
+        no_data_div = html.Div([html.H5("No data selected.")],style ={'color':'white'})
+        no_info_div = html.Div([html.H5("No data selected.")],style ={'color':'white'})
         return no_data_div, no_info_div 
     
     else:
         filtered_data.sort(key=lambda x: x[1])  # Order by accuracy
 
         
-        # models = [entry[0] for entry in filtered_data]
-        # accuracies = [entry[1] for entry in filtered_data]
         models, accuracies, coef_matrices, models_info = zip(*[(entry[0], entry[1], entry[2], entry[3]) for entry in filtered_data])
 
 
@@ -126,7 +123,7 @@ def update_chart(selected_models: list[str]) -> html.Div:
         for i, acc in enumerate(accuracies):
             fig.add_annotation(x=acc, y=models[i], text=str(acc)+'%', showarrow=False, font=dict(color='black', size=11))
             
-        graph_div = html.Div(dcc.Graph(figure=fig), id='id-chart',className='graph-container2')
+        graph_div = html.Div(dcc.Graph(figure=fig), className='graph-container2')
         
         
         model_info_divs = [html.Div([html.H4(models[i]),html.P(models_info[i])]) for i in range(len(models))]
@@ -134,6 +131,6 @@ def update_chart(selected_models: list[str]) -> html.Div:
 
         information_div = html.Div([
             html.H2("Explaining models"),
-            html.Div(model_info_divs, id='model-info-list')], id='id-information',className='info-container')
+            html.Div(model_info_divs, id='model-info-list')],className='info-container')
 
         return graph_div, information_div
