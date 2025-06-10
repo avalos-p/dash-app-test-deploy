@@ -1,3 +1,6 @@
+wheel
+setuptools<58.0.0
+docopt==0.6.2
 dash
 dash_bootstrap_components
 dash-bootstrap-templates
